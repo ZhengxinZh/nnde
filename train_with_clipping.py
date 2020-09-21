@@ -127,7 +127,7 @@ model.fit(dataset, batch_size=100, epochs=1)
 
 print(dataset[1] )
 print(model.predict( dataset[1:2] ))
-print( (tf.reduce_mean(model.predict(dataset))).eval() )
+print( tf.get_static_value( tf.reduce_mean(model.predict(dataset)) ) )
 
 
 
